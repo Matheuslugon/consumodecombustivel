@@ -1,0 +1,112 @@
+*{
+    color: aliceblue;
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+}
+ body{
+    margin: 0;
+    padding: 0;
+    background-image: url(./img/transito01.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+}
+h1{
+    margin: auto
+}
+
+
+.masterpai{
+    display: flex;
+    justify-content: center;
+}
+.master{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    background-color: #0404049e;
+    padding: 10px 10px 10px 10px;
+    gap: 6px;
+}
+.master p{
+    margin-bottom: 3px;
+    padding-left: 20px;
+}
+
+.master input{
+    width: 200px;
+    color: black;
+    margin-left: 20px; 
+}
+
+.flex{
+    display: flex;
+    margin-top: 10px;
+    padding-left: 20px ;
+}
+
+.flex2{
+    display: flex;
+}
+
+.flex2 input{
+    width: 15px;
+    margin: 0px;
+    margin-right: 8px;
+}
+
+.flex3{
+    display: flex;
+}
+
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+
+.button-master{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.button1{
+    background: #04040491;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FF4742;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.button1:hover,
+.button1:active {
+  background-color: initial;
+  background-position: 0 0;
+  background-color: #ff484286;
+  color: white;
+}
+
+.button1:active {
+  opacity: .5;
+}
