@@ -8,46 +8,73 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-        <div class="masterpai">
-            <div class="master">
-                <h1>Consumo Automotivo Por Trajeto</h1>
-                <p>Quantos KM tem seu trajeto?</p>
-                <input type="text" name="txtTrajeto" id="txtTrajeto" min="0">
-                <p>Quantos KM/L seu carro faz na cidade com gasolina?</p>
-                <input type="text" name="kcidade" id="kcidadeg" min="0">
-                <p>Quantos KM/L seu carro faz na estrada com gasolina?</p>
-                <input type="text" name="kestrada" id="kestradag" min="0">
-                <p>Em media qual é o preço do Gasolina na sua cidade?</p>
-                    <input type="text" name="valorGasolina" id="valorGasolina" min="0">
-                <div class="flex">
-                    <div class="flex2">
-                        <input type="checkbox" name="flex" id="flex" onclick="toggleFlexInput(isFlex.checked)">
+    <div class="masterpai">
+        <div class="master">
+            <h1>Consumo Automotivo Por Trajeto</h1>
+            <p>Quantos KM tem seu trajeto?</p>
+            <input type="text" name="txtTrajeto" id="txtTrajeto" min="0">
+            <p>Quantos KM/L seu carro faz na cidade com gasolina?</p>
+            <input type="text" name="kcidade" id="kcidadeg" min="0">
+            <p>Quantos KM/L seu carro faz na estrada com gasolina?</p>
+            <input type="text" name="kestrada" id="kestradag" min="0">
+            <p>Em media qual é o preço do Gasolina na sua cidade?</p>
+            <input type="text" name="valorGasolina" id="valorGasolina" min="0">
+            <div class="flex">
+                <div class="flex2">
+                    <input type="checkbox" name="flex" id="flex" onclick="toggleFlexInput(isFlex.checked)">
+                </div>
+                <div class="flex3">
+                    <label for="fem">Meu carro também é flex.</label>
+                </div>
+            </div>
+            <div id="alcool" class="hide">
+                <p>Quantos KM/L seu carro faz na cidade com Alcool?</p>
+                <input type="text" name="kcidadea" id="kcidadea" min="0">
+                <p>Quantos KM/L seu carro faz na estrada com Alcool?</p>
+                <input type="text" name="kestradaa" id="kestradaa" min="0">
+                <p>Em media qual é o preço do alcool na sua cidade?</p>
+                <input type="text" name="valorAlcool" id="valorAlcool" min="0">
+            </div>
+            <div class="button-master">
+                <button class="button1" value="finalizar" onclick="finalizar()">Finalizar</button>
+            </div>
+
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="verficado">
+                        <img src="img/" alt="">
+                        <h3>
+                            <strong>Informações Verificadas.</strong>
+                        </h3>
                     </div>
-                    <div class="flex3">
-                        <label for="fem">Meu carro também é flex.</label>
+                    <div class="respostas">
+                        <div id="resGasolina">
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse asperiores perspiciatis
+                                impedit explicabo sint tempora laudantium reprehenderit voluptatibus ipsum maxime, error
+                                facere. Tempore a quam vero assumenda recusandae dolorum impedit?
+                            </p>
+                        </div>
+                        <div id="resAlcool">
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat ea eveniet quidem fuga!
+                                Voluptatum voluptates possimus, error repellendus ea illum sunt, incidunt repudiandae
+                                beatae, accusantium quo id soluta consectetur dolor?
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div id="alcool" class="hide">
-                    <p>Quantos KM/L seu carro faz na cidade com Alcool?</p>
-                    <input type="text" name="kcidadea" id="kcidadea" min="0">
-                    <p>Quantos KM/L seu carro faz na estrada com Alcool?</p>
-                    <input type="text" name="kestradaa" id="kestradaa" min="0">
-                    <p>Em media qual é o preço do alcool na sua cidade?</p>
-                    <input type="text" name="valorAlcool" id="valorAlcool" min="0">
-                </div>
-                <div class="button-master">
-                    <button class="button1" value="finalizar" onclick="finalizar()">Finalizar</button>
-                </div>
-                <div class="respostas">
-                    <div id="resGasolina"></div>
-                    <div id="resAlcool"></div>
                 </div>
             </div>
         </div>
+    </div>
 </body>
 
 <script src="./javascript/calculo_etanol.js"></script>
