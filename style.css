@@ -114,7 +114,7 @@ h1{
 }
 
 /* Criação do modal para aprensentação das respostas */
-
+/*Test*/
 .modal {
   display: block; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -158,16 +158,68 @@ h1{
 
 .respostas{
     display: flex;
+    width: 100%;
+}
+
+#resGasolina{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    
+}
+
+#resGasolina h3{
+    display: flex;
+    color: black;
+    justify-content: center;
+    
+}
+
+#resAlcool{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#resAlcool h3{
+    display: flex;
+    color: black;
+    justify-content: center;
+}
+
+.tabelaMaster{
+    display: flex;
+    justify-content: center;
 }
 
 .respostas p{
     color: black;
 }
 
-.verficado h3 strong{
+.verficado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.verficado img{
+    width: 120px;
+}
+
+.verficado h2 strong{
     margin-bottom: 20px;
     display: flex;
     color: black;
     justify-content: center;
     
+}
+
+#tabeladeRespostas td{
+    color: black;
+    width: 100px;
 }

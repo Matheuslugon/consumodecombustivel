@@ -30,10 +30,10 @@ function finalizar() {
         return false
     }
 
-    resGasolina.innerHTML = `<p>Seu consumo de gasolina na cidade será de ${Math.round(kmLitroCidade)}L e seu custo será de R$${Math.round(preçoCidade)}. Já na estrada será de ${Math.round(kmLitroEstrada)}L. com o custo de R$${Math.round(preçoEstrada)}</p>`
+    //resGasolina.innerHTML = `<p>Seu consumo de gasolina na cidade será de ${Math.round(kmLitroCidade)}L e seu custo será de R$${Math.round(preçoCidade)}. Já na estrada será de ${Math.round(kmLitroEstrada)}L. com o custo de R$${Math.round(preçoEstrada)}</p>`
 
     if (isFlex.checked) {
-        resAlcool.innerHTML = `<p>Seu consumo de alcool na cidade será de ${Math.round(kmLitroCidadeEtanol)}L e seu custo será de R$${Math.round(preçoCidadeAlcool)}. Já na estrada ${Math.round(kmLitroEstradaEtanol)}L. Com o custo de R$${Math.round(preçoEstradaAlcool)}</p>`
+        //resAlcool.innerHTML = `<p>Seu consumo de alcool na cidade será de ${Math.round(kmLitroCidadeEtanol)}L e seu custo será de R$${Math.round(preçoCidadeAlcool)}. Já na estrada ${Math.round(kmLitroEstradaEtanol)}L. Com o custo de R$${Math.round(preçoEstradaAlcool)}</p>`
     }
     openModal()
 }
