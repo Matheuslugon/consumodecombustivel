@@ -2,7 +2,7 @@ const isFlex = document.getElementById('flex')
 
 function finalizar() {
     const kmTrajeto = document.getElementById('txtTrajeto').value
-    //cons do calculo para o alcool
+    //cons do calculo para a gasolina
     const consumoGasolinaCidadeKm = document.getElementById('kcidadeg').value
     const consumoGasolinaEstradaKm = document.getElementById('kestradag').value
     const valorDaGasolina = document.getElementById('valorGasolina').value
@@ -10,36 +10,60 @@ function finalizar() {
     const consumoEtanolCidadeKm = document.getElementById('kcidadea').value
     const consumoEtanolEstradaKm = document.getElementById('kestradaa').value
     const valorDoAlcool = document.getElementById('valorAlcool').value
-
-    const resGasolina = document.getElementById('resGasolina')
-    const resAlcool = document.getElementById('resAlcool')
-
+    //const resGasolina = document.getElementById('resGasolina')
+    //const resAlcool = document.getElementById('resAlcool')
     const { kmLitroCidade, kmLitroEstrada, preçoCidade, preçoEstrada } = calculoGasolina(kmTrajeto, consumoGasolinaEstradaKm, consumoGasolinaCidadeKm, valorDaGasolina);
     const { kmLitroCidadeEtanol, kmLitroEstradaEtanol, preçoCidadeAlcool, preçoEstradaAlcool } = calculoEtanol(kmTrajeto, consumoEtanolEstradaKm, consumoEtanolCidadeKm, valorDoAlcool)
+    console.log(valorDaGasolina)
 
-    console.log(kmLitroEstradaEtanol)
-
-
-    if (kmTrajeto.length == 0 && consumoGasolinaCidadeKm.length == 0 && consumoGasolinaEstradaKm.length == 0) {
+//[ERRO] IF NAO ESTÁ VALIDANDO valorDaGasolina. Necessario criar um novo IF para validar!
+    if (kmTrajeto.length == 0 && consumoGasolinaCidadeKm.length == 0 && consumoGasolinaEstradaKm.length == 0){
         window.alert('[ERRO] Verifique os dados de gasolina e tente novamente!')
         return false
     }
 
-    if (isFlex.checked && kmTrajeto.length == 0 && consumoEtanolCidadeKm.length == 0 && consumoEtanolEstradaKm.length == 0) {
-        window.alert('[ERRO] Verifique os dados de etanol e tente novamente!')
+    if (valorDaGasolina.length == 0){
+      window.alert('[ERRO] Verifique os dados de gasolina e tente novamente!')
+      return false
+    }
+
+    const rescidadeGasolina = document.getElementById('respostaCidadeGasolina')
+    rescidadeGasolina.innerHTML = `${kmLitroCidade} Litros`
+    const resCustocidadeGasolina = document.getElementById('respostaCustoCidadeGasolina')
+    resCustocidadeGasolina.innerHTML = `R$ ${preçoCidade}`
+    //ESTRADA
+    const resEstradaGasolina = document.getElementById('respostaEstradaGasolina')
+    resEstradaGasolina.innerHTML = `${kmLitroEstrada} Litros`
+    const resCustoEstradaGasolina = document.getElementById('respostaCustoEstradaGasolina')
+    resCustoEstradaGasolina.innerHTML = `R$ ${preçoEstrada}`
+
+    if (isFlex.checked && consumoEtanolCidadeKm.length == 0 && consumoEtanolEstradaKm.length == 0 && valorDoAlcool.length == 0){
+        window.alert('[ERRO] Verifique os dados do Etanol e tente novamente!')
         return false
     }
 
-    //resGasolina.innerHTML = `<p>Seu consumo de gasolina na cidade será de ${Math.round(kmLitroCidade)}L e seu custo será de R$${Math.round(preçoCidade)}. Já na estrada será de ${Math.round(kmLitroEstrada)}L. com o custo de R$${Math.round(preçoEstrada)}</p>`
+    if (isFlex.checked && valorDoAlcool.length == 0){
+      window.alert('[ERRO] Verifique os dados do Etanol e tente novamente!')
+      return false
+    }
 
     if (isFlex.checked) {
-        //resAlcool.innerHTML = `<p>Seu consumo de alcool na cidade será de ${Math.round(kmLitroCidadeEtanol)}L e seu custo será de R$${Math.round(preçoCidadeAlcool)}. Já na estrada ${Math.round(kmLitroEstradaEtanol)}L. Com o custo de R$${Math.round(preçoEstradaAlcool)}</p>`
+        //CIDADE
+        const rescidadeAlcool = document.getElementById('respostaCidadeAlcool')
+        rescidadeAlcool.innerHTML = `${kmLitroCidadeEtanol} Litros`
+        const resCustocidadeAlcool = document.getElementById('respostaCustoCidadeAlcool')
+        resCustocidadeAlcool.innerHTML = `R$ ${preçoCidadeAlcool}`
+        //ESTRADA
+        const resEstradaAlcool = document.getElementById('respostaEstradaAlcool')
+        resEstradaAlcool.innerHTML = `${kmLitroEstradaEtanol} Litros`
+        const resCustoEstradaAlcool = document.getElementById('respostaCustoEstradaAlcool')
+        resCustoEstradaAlcool.innerHTML = `R$ ${preçoEstradaAlcool}`
+
     }
     openModal()
 }
 
 function openModal(){
-    console.log("Funcionou!!")
     //Criação das variaveis para o modal
     // Get the modal
     var modal = document.getElementById("myModal");
@@ -58,11 +82,10 @@ function openModal(){
       // When the user clicks anywhere outside of the modal, close it
       window.onclick = function(event) {
         if (event.target == modal) {
-          modal.style.display = "none";
+          modal.style.display = "block";
         }
       }
 }
-
 
 
 
